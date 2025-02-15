@@ -1,19 +1,17 @@
 plugins {
+    id 'application'
     id 'java'
 }
-
-group = 'org.example.todo'
-version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.mongodb:mongodb-driver-sync:4.10.2'
+    implementation 'com.formdev:flatlaf:3.1.1' // UI Theme
 }
 
-test {
-    useJUnitPlatform()
+application {
+    mainClass = 'todo.Main'
 }
